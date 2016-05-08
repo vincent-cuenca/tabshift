@@ -1,13 +1,20 @@
 {
-	"manifest_version": 2,
 	"name": "tabshift",
-	"description": "Adds the rearranging tabs shortcut (Ctrl+Shift+PgUp/Down) to Windows versions of Google Chrome",
+	"description": "Adds the rearranging tabs shortcut (Ctrl (Command for OSX)+Shift+PgUp/Down) to non-Linux versions of Google Chrome",
+	"manifest_version": 2,
 	"version": "1.0",
+	"permissions": [
+		"<all_urls>"
+	],
+
+	"background": {
+		"scripts": ["popup.js"],
+		"persistent": true
+	},
 
 	"browser_action": {
-		"default_icon": "icon_png",
-		"default_popup": "popup.html"
-	},
+		"default_icon": "icon_png.png"
+	}, 
 
 	"permissions": [
 		"activeTab"
@@ -21,12 +28,12 @@
 			},
 			"description": "Shift current tab to the left"
 		},
-		"shift-tab-left": {
+		"shift-tab-right": {
 			"suggested_key": {
 				"default": "Ctrl+Shift+PageDown",
 				"mac": "Command+Shift+PageDown"
 			},
-			"description": "Shift current tab to the left"
+			"description": "Shift current tab to the right"
 		}
 	}
 }
